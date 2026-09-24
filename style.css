@@ -1,0 +1,301 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #281b31;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(rgba(27, 20, 35, 0.36), rgba(27, 20, 35, 0.62)),
+    url("paisaje-uvas.png") center / cover fixed;
+}
+
+.pagina {
+  width: min(1180px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 28px 0 36px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 24px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.marca-icono {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 1.5rem;
+}
+
+.portada {
+  display: flex;
+  min-height: 300px;
+  align-items: flex-end;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 28px;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 20, 49, 0.88),
+    rgba(37, 20, 49, 0.28)
+  );
+  box-shadow: 0 20px 48px rgba(21, 12, 27, 0.22);
+}
+
+.portada-contenido {
+  max-width: 760px;
+  padding: clamp(30px, 5vw, 62px);
+  color: #fff;
+}
+
+.portada h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.08;
+}
+
+.portada p {
+  max-width: 600px;
+  margin: 0;
+  color: #f6edf7;
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+
+.contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+  gap: 22px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.panel,
+.informacion {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 14px 36px rgba(21, 12, 27, 0.14);
+}
+
+.panel {
+  padding: clamp(24px, 4vw, 38px);
+}
+
+.panel-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.panel-icono {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  flex: none;
+  place-items: center;
+  border-radius: 18px;
+  background: #f0e5f7;
+  font-size: 2rem;
+}
+
+.panel h2,
+.informacion h2 {
+  margin: 0 0 8px;
+  color: #39194f;
+  font-size: 1.45rem;
+}
+
+.panel-encabezado p,
+.informacion p {
+  margin: 0;
+  color: #62566b;
+  line-height: 1.55;
+}
+
+.etiqueta-archivo {
+  display: block;
+  margin-bottom: 11px;
+  color: #39234a;
+  font-weight: 700;
+}
+
+#imagen-input {
+  display: block;
+  width: 100%;
+  padding: 17px;
+  border: 2px dashed #b99aca;
+  border-radius: 15px;
+  background: #fbf8fd;
+  color: #43344b;
+  font: inherit;
+  cursor: pointer;
+}
+
+#imagen-input::file-selector-button {
+  margin-right: 12px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 9px;
+  background: #eee1f5;
+  color: #4d2465;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ayuda {
+  margin: 10px 0 0;
+  color: #716578;
+  font-size: 0.9rem;
+}
+
+.vista-previa {
+  margin-top: 22px;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #f2edf4;
+}
+
+.vista-previa img {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+}
+
+.boton-analizar {
+  width: 100%;
+  min-height: 56px;
+  margin-top: 24px;
+  padding: 14px;
+  border: 0;
+  border-radius: 12px;
+  background: #592573;
+  color: #fff;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.boton-analizar:hover:not(:disabled) {
+  background: #401753;
+}
+
+.boton-analizar:disabled {
+  background: #b9b1be;
+  cursor: not-allowed;
+}
+
+.estado {
+  margin: 18px 0 0;
+  color: #665a70;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.resultado {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid #ddcce8;
+  border-radius: 16px;
+  background: #f8f1fc;
+  text-align: center;
+}
+
+.clase-predicha {
+  margin: 13px 0;
+  color: #4d2465;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.confianza {
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+#porcentaje-confianza {
+  color: #4d2465;
+}
+
+.informacion {
+  padding: 28px;
+}
+
+.informacion-icono {
+  display: block;
+  margin-bottom: 17px;
+  color: #70388f;
+  font-size: 2rem;
+}
+
+.informacion ol {
+  margin: 21px 0 0;
+  padding-left: 22px;
+  color: #594d61;
+  line-height: 1.9;
+}
+
+.pie {
+  margin-top: 27px;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+#imagen-input:focus-visible,
+.boton-analizar:focus-visible {
+  outline: 3px solid #8542ac;
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .portada {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagina {
+    width: min(100% - 24px, 1180px);
+    padding-top: 16px;
+  }
+
+  .panel-encabezado {
+    align-items: flex-start;
+  }
+
+  .panel-icono {
+    width: 52px;
+    height: 52px;
+    font-size: 1.7rem;
+  }
+}

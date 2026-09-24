@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UvaIA | Clasificador de uvas</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .contenido {
+      display: block;
+    }
+
+    .panel {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="pagina">
+    <header class="portada">
+      <div class="portada-contenido">
+        <h1>Clasificador de uvas</h1>
+        <p>
+          Descubre si tus uvas están en buen o mal estado mediante
+          un modelo de Deep Learning.
+        </p>
+      </div>
+    </header>
+
+    <div class="contenido">
+      <section class="panel" aria-labelledby="titulo-analisis">
+        <div class="panel-encabezado">
+          <span class="panel-icono" aria-hidden="true">🍇</span>
+
+          <div>
+            <h2 id="titulo-analisis">Analiza tu imagen</h2>
+            <p>Elige una fotografía clara de las uvas para comenzar.</p>
+          </div>
+        </div>
+
+        <label for="imagen-input" class="etiqueta-archivo">
+          📷 Seleccionar fotografía
+        </label>
+
+        <input
+          type="file"
+          id="imagen-input"
+          accept="image/*"
+          aria-describedby="ayuda-archivo"
+        >
+
+        <p id="ayuda-archivo" class="ayuda">
+          Usa una imagen donde las uvas se vean con claridad.
+        </p>
+
+        <div id="vista-previa" class="vista-previa" hidden>
+          <img
+            id="imagen-preview"
+            src=""
+            alt="Vista previa de las uvas seleccionadas"
+          >
+        </div>
+
+        <button
+          id="analizar-btn"
+          class="boton-analizar"
+          type="button"
+          disabled
+        >
+          Analizar uvas
+        </button>
+
+        <p id="estado" class="estado" role="status" aria-live="polite">
+          Selecciona una fotografía para comenzar.
+        </p>
+
+        <section
+          id="resultado"
+          class="resultado"
+          aria-labelledby="titulo-resultado"
+          hidden
+        >
+          <h2 id="titulo-resultado">Resultado del análisis</h2>
+
+          <p id="clase-predicha" class="clase-predicha"></p>
+
+          <p class="confianza">
+            Confianza:
+            <strong id="porcentaje-confianza"></strong>
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <footer class="pie">
+      Proyecto académico · Modelo creado con Teachable Machine
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.3/dist/teachablemachine-image.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
